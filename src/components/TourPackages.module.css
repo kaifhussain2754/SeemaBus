@@ -1,0 +1,30 @@
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Prevents overflow of the image */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Transition for smooth scaling */
+  }
+  
+  .card:hover .card-img-top {
+    transform: scale(1.2); /* Zoom in the image on hover */
+  }
+  
+  .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: white;
+  }
+  
+  .btn:hover {
+    background-color: white;
+    color: black;
+  }
+  

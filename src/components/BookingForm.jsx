@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styles from './BookingForm.module.css'; // Import the updated CSS module
+// src/components/BookingForm.js
+import React, { useState, useEffect } from 'react';
+import styles from './BookingForm.module.css';
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const BookingForm = () => {
     drop: '',
     travelDate: '',
     requests: '',
+    passengers: '', // New field for number of passengers
   });
 
   const handleChange = (e) => {
@@ -25,7 +27,7 @@ const BookingForm = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>Book Your Next Trip</h2>
+      <h2 className={styles.heading} data-aos="fade-down">Book Your Next Trip</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.flex}>
           <div className={styles.inputContainer}>
@@ -119,6 +121,24 @@ const BookingForm = () => {
                 placeholder=" "
               />
               <span>Travel Date</span>
+            </label>
+          </div>
+        </div>
+
+        <div className={styles.flex}>
+          <div className={styles.inputContainer}>
+            <label className={styles.label}>
+              <input
+                type="number"
+                name="passengers"
+                value={formData.passengers}
+                onChange={handleChange}
+                className={styles.input}
+                required
+                min="1"
+                placeholder=" "
+              />
+              <span>No. of Passengers</span>
             </label>
           </div>
         </div>

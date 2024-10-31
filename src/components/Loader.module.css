@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI';
+  }
+  
+  .loader-wrapper {
+    position: fixed;
+    z-index: 1090;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(240, 240, 240, 0.5);
+  }
+  
+  .truck-wrapper {
+    height: 200px;
+    width: 200px;
+    border: 5px solid #4CAF50;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: white;
+    animation: bg 0.5s linear infinite;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  
+  .truck-wrapper:after {
+    content: 'Seema Bus';
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #4CAF50;
+    background: linear-gradient(to right, #4CAF50 0%, #61c664 100%);
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 18px;
+    animation: bg 3s linear infinite;
+  }
+  
+  .truck {
+    height: 110px;
+    width: 150px;
+    position: absolute;
+    bottom: 48px;
+    left: calc(50% + 10px);
+    transform: translateX(-50%);
+  }
+  
+  /* Truck Parts */
+  .truck > .glases {
+    background: linear-gradient(135deg, #514f4f 0%, #333131 100%);
+    position: absolute;
+    height: 25px;
+    width: 143.9px;
+    border: 4px solid #FBD734;
+    border-bottom: none;
+    top: 35.5px;
+    left: -19px;
+    border-top-right-radius: 6px;
+    animation: updown-half 0.4s linear infinite;
+  }
+  
+  .truck > .bonet {
+    background-color: #FBD734;
+    position: absolute;
+    width: 153.8px;
+    height: 15px;
+    top: 64px;
+    left: -19px;
+    z-index: -1;
+    animation: updown 0.4s linear infinite;
+  }
+  
+  .truck > .base {
+    position: absolute;
+    background-color: #445A64;
+    width: 134px;
+    height: 15px;
+    border-top-right-radius: 10px;
+    top: 70px;
+    left: -15px;
+    animation: updown 0.4s linear infinite;
+  }
+  
+  .truck > .wheel-back,
+  .truck > .wheel-front {
+    border-radius: 100%;
+    position: absolute;
+    background: linear-gradient(135deg, #546e7a 0%, #445a64 100%);
+    top: 75px;
+    height: 22px;
+    width: 22px;
+    animation: spin 0.6s linear infinite;
+  }
+  
+  .truck > .smoke {
+    position: absolute;
+    background-color: #AFBDC3;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    top: 90px;
+    left: 6px;
+    animation: fade 0.4s linear infinite;
+    opacity: 0;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes bg {
+    from {
+      background-position-x: 0px;
+    }
+    to {
+      background-position-x: -400px;
+    }
+  }
+  
+  @keyframes updown {
+    50% {
+      transform: translateY(-20%);
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+  }
+  
+  @keyframes updown-half {
+    50% {
+      transform: translateY(-10%);
+    }
+    70% {
+      transform: translateY(-5%);
+    }
+  }
+  
+  @keyframes fade {
+    50% {
+      opacity: 0.5;
+      left: 6px;
+    }
+    90% {
+      opacity: 0.4;
+      left: 2px;
+    }
+  }
+  

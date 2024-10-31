@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap');
-
 .navbar {
   background-color: white; /* Primary color */
-  font-family: 'Lexend', sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
   padding: 1rem 2rem;
 }

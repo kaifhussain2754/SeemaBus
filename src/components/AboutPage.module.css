@@ -1,0 +1,184 @@
+/* AboutPage.module.css */
+
+/* General Styles */
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    text-align: left; /* Aligns text to the left */
+}
+
+.aboutImage {
+    width: 100%; /* Ensures the image is responsive */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+
+.callButton {
+    background-color: #B17457; /* Button color */
+    color: white;
+}
+
+.enquireButton {
+    background-color: #B17457; /* Button color */
+    color: white;
+}
+
+.row.mt-5 {
+    margin-top: 2rem !important; /* Add some space between sections */
+}
+
+h2 {
+    font-size: 2.5rem; /* Adjust the size of the count */
+}
+
+p {
+    font-size: 1.2rem; /* Adjust the size of the text */
+}
+
+/* Stats Container Style */
+.statsContainer {
+    background-color: white; /* White background */
+    padding: 2rem 0; /* Padding around the stats */
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow */
+}
+
+/* Stats Item Style */
+.statsItem {
+    flex: 1; /* Allow items to grow equally */
+    min-width: 200px; /* Minimum width for each item */
+    max-width: 250px; /* Maximum width for each item */
+    margin: 1rem; /* Margin around each item */
+    text-align: center; /* Center text in each item */
+    padding: 1rem; /* Padding inside each item */
+    border: 1px solid #e0e0e0; /* Optional: border for items */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background for items */
+}
+
+/* Why Choose Us Section Styles */
+.whyChooseContainer {
+    margin-top: 2rem;
+    padding: 2rem 0; /* Padding for the section */
+}
+
+/* Card Style */
+.card {
+    background-color: #f8f9fa; /* Light background for cards */
+    border-radius: 8px; /* Rounded corners */
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.2s; /* Smooth hover effect */
+    display: flex; /* Ensure cards are flex containers */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100%; /* Full height to make them equal */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.cardIcon {
+    color: #B17457; /* Icon color */
+    margin-bottom: 1rem; /* Space between icon and text */
+    font-size: 40px; /* Adjust icon size if needed */
+    display: block; /* Make sure it's treated as a block element */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .aboutContainer {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduce heading size on small screens */
+    }
+
+    p {
+        font-size: 1rem; /* Reduce paragraph size on small screens */
+    }
+
+    .statsContainer {
+        padding: 1rem; /* Reduce padding for small screens */
+    }
+
+    .statsItem {
+        max-width: 100%; /* Allow full width on small screens */
+        margin: 0.5rem 0; /* Adjust margins for vertical stacking */
+    }
+
+    .card {
+        margin-bottom: 1rem; /* Add space between cards */
+    }
+
+    .whyChooseContainer {
+        padding: 1rem; /* Reduce padding for small screens */
+    }
+
+    /* Increase the font size of the numbers in the stats section */
+    .statsContainer h2 {
+        font-size: 1.5rem; /* Larger font size for mobile devices */
+    }
+
+    .statsContainer p {
+        font-size: 1.2rem; /* Adjust font size for the description text */
+    }
+}
+
+
+/* Testimonials Container */
+.testimonialsContainer {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual Testimonial Card */
+.testimonialCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonialText {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.testimonialName {
+    font-weight: bold;
+    color: #555;
+    margin-top: 1rem;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.starIcon {
+    color: #ffc107; /* Gold color for star rating */
+    font-size: 1.2rem;
+    margin: 0 2px;
+}
+
+
