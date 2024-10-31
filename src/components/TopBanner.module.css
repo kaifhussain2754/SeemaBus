@@ -1,0 +1,88 @@
+.banner {
+    background-color: #4A4947; /* Secondary color */
+    color: #FAF7F0; /* Text color */
+    padding: 10px 20px; /* Top and bottom padding, left and right padding */
+    text-align: center;
+    position: relative; /* Ensure proper layout */
+  }
+  
+  .bannerContent {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    align-items: center;
+    max-width: 1200px; /* Optional: Limit width */
+    margin: 0 auto; /* Center the content */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+  }
+  
+  .bookingInfo {
+    flex: 1; /* Allow this element to grow */
+    text-align: left; /* Align text to the left */
+    padding-right: 20px; /* Space between text and icons */
+    font-size: 1rem; /* Default font size */
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    justify-content: flex-end;
+  }
+  
+  .icon {
+    color: #FAF7F0; /* Icon color */
+    font-size: 1.5rem; /* Default icon size */
+    transition: color 0.3s ease;
+  }
+  
+  .icon:hover {
+    color: #B17457; /* Change color on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .banner {
+      padding: 8px 10px; /* Reduce padding on smaller screens */
+    }
+  
+    .bookingInfo {
+      font-size: 0.9rem; /* Smaller font size */
+      padding-right: 10px; /* Adjust padding */
+      text-align: center; /* Center align booking info text */
+    }
+  
+    .socialIcons {
+      justify-content: center; /* Center icons on mobile */
+      gap: 10px; /* Slightly closer icons */
+    }
+  
+    .icon {
+      font-size: 1.2rem; /* Smaller icon size */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .banner {
+      padding: 6px 8px; /* Further reduce padding */
+    }
+  
+    .bookingInfo {
+      font-size: 0.8rem; /* Even smaller font size */
+      padding: 0; /* Remove right padding */
+    }
+  
+    .socialIcons {
+      justify-content: center; /* Center icons */
+      gap: 8px; /* Closer icons on smaller screens */
+    }
+  
+    .icon {
+      font-size: 1rem; /* Even smaller icon size */
+    }
+  }  
+
+  @media (max-width: 576px){
+    .bookingInfo{
+        font-size: 0.5rem;
+        text-align: center;
+    }
+  }

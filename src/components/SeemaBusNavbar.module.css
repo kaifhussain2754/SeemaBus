@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap');
+
+.navbar {
+  background-color: white; /* Primary color */
+  font-family: 'Lexend', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 1rem 2rem;
+}
+
+.brand {
+  color: #4A4947;
+  font-size: 1.5rem;
+}
+
+.logo {
+  height: 70px; /* Default height for large screens */
+  transition: height 0.3s ease-in-out; /* Smooth transition for height change */
+}
+
+.navLink {
+  color: #4A4947;
+  transition: color 0.3s ease-in;
+  font-size: 1.1rem;
+}
+
+.navLink:hover {
+  color: #B17457;
+}
+
+.bookButton {
+  background-color: #4A4947;
+  color: #FAF7F0;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.bookButton:hover {
+  background-color: #B17457;
+  color: #FAF7F0;
+}
+
+/* Responsive Button Sizes */
+.smallButton {
+  font-size: 0.8rem; /* Smaller font size for small screens */
+  padding: 0.3rem 0.6rem; /* Smaller padding for small screens */
+}
+
+/* Adjust toggle button size */
+.toggleButton {
+  border: none; /* Remove border */
+  background: transparent; /* Make background transparent */
+}
+
+/* Adjust toggle button icon size */
+.toggle-button .navbar-toggler-icon {
+  width: 30px; /* Adjust icon width */
+  height: 30px; /* Adjust icon height */
+  background-size: 30px 30px; /* Ensure background image scales correctly */
+}
+  
+  .navDropdown .dropdown-item:hover {
+    background-color: #B17457; /* Change background color on hover */
+    color: #FAF7F0; /* Change text color on hover */
+  }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .navLink {
+    font-size: 1rem;
+  }
+
+  .bookButton {
+    font-size: 0.9rem; /* Adjust button font size for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    height: 50px; /* Further decrease height for small screens */
+  }
+}
+
+@media (max-width: 331px) {
+  .bookButton {
+    font-size: 0.7rem; /* Further decrease font size for extra small screens */
+    padding: 0.3rem 0.4rem; /* Smaller padding for extra small screens */
+  }
+}
+
+/* Styles for positioning in mobile view */
+@media (max-width: 768px) {
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+  
+    .bookButton {
+      order: 1; /* Place book button before the toggle */
+      margin-right: 0.5rem; /* Spacing between button and toggle */
+    }
+  
+    .toggleButton {
+      order: 2; /* Place toggle after the book button */
+      margin-left: auto;
+    }
+  
+    .navbar-collapse {
+      text-align: center; /* Center items in the collapsible navbar */
+    }
+  }
+  

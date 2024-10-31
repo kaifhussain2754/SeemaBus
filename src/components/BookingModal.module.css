@@ -1,0 +1,35 @@
+.modal {
+    background-color: #FAF7F0; /* Light background color */
+  }
+  
+  .modal-body {
+    color: #4A4947; /* Dark text color */
+  }
+  
+  .modal-header {
+    border-bottom: 2px solid #B17457; /* Accent color for the header */
+  }
+  
+  .modal-title {
+    color: #4A4947; /* Dark text for the title */
+  }
+  
+  .form-control {
+    background-color: #FAF7F0; /* Light background for form fields */
+    color: #4A4947; /* Dark text for form fields */
+    border: 1px solid #B17457; /* Accent color for border */
+  }
+  
+  .form-control::placeholder {
+    color: #B17457; /* Accent color for placeholder text */
+  }
+  
+  .btn-primary {
+    background-color: #B17457; /* Accent color for buttons */
+    border: none; /* Remove border */
+  }
+  
+  .btn-primary:hover {
+    background-color: #4A4947; /* Darken on hover */
+  }
+  

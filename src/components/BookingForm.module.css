@@ -1,0 +1,153 @@
+/* BookingForm.module.css */
+.container {
+    max-width: 1200px; /* Set a max width for the form */
+    margin: -150px auto 0; /* Adjusted top margin for centering */
+    padding: 20px; /* Padding around the form */
+    background-color: #fff; /* White background for the form */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    font-family: Arial, sans-serif;
+}
+
+.heading {
+    font-size: 28px; /* Heading size */
+    color: #B17457; /* Heading color */
+    font-weight: 600; /* Bold weight */
+    letter-spacing: -1px; /* Letter spacing */
+    position: relative; /* Position for pseudo-elements */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    padding-left: 30px; /* Padding on left */
+}
+
+.heading::before, .heading::after {
+    position: absolute; /* Position for the circles */
+    content: "";
+    height: 16px; /* Circle height */
+    width: 16px; /* Circle width */
+    border-radius: 50%; /* Make circles round */
+    left: 0; /* Position from the left */
+    background-color: #B17457; /* Circle color */
+}
+
+.heading::before {
+    width: 18px; /* Size for the first circle */
+    height: 18px;
+}
+
+.heading::after {
+    width: 18px; /* Size for the second circle */
+    height: 18px;
+    animation: pulse 1s linear infinite; /* Pulsing animation */
+}
+
+.form {
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Increased space between elements for padding effect */
+}
+
+.flex {
+    display: flex; /* Flexbox for inputs */
+    width: 100%; /* Full width */
+    gap: 10px; /* Space between inputs */
+}
+
+.inputContainer {
+    flex: 1 1 48%; /* Responsive sizing */
+    position: relative; /* Position for label */
+}
+
+.label {
+    display: block; /* Block for full width */
+}
+
+.input {
+    width: 100%; /* Full width for input */
+    padding: 10px 10px 20px 10px; /* Padding for input */
+    outline: 0; /* Remove outline */
+    border: 1px solid rgba(105, 105, 105, 0.397); /* Input border */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.input + span {
+    position: absolute; /* Position label over input */
+    left: 10px; /* Position from the left */
+    top: 15px; /* Position from the top */
+    color: grey; /* Label color */
+    font-size: 0.9em; /* Label size */
+    cursor: text; /* Pointer for label */
+    transition: 0.3s ease; /* Smooth transition */
+}
+
+.input:placeholder-shown + span {
+    top: 15px; /* Position when placeholder is shown */
+    font-size: 0.9em; /* Size when placeholder is shown */
+}
+
+.input:focus + span, .input:valid + span {
+    top: 0px; /* Position when focused or valid */
+    font-size: 0.7em; /* Size when focused or valid */
+    font-weight: 600; /* Bold when focused or valid */
+}
+
+.input:valid + span {
+    color: green; /* Change label color when valid */
+}
+
+.submit {
+    border: none; /* No border */
+    outline: none; /* No outline */
+    background-color: #B17457; /* Submit button color */
+    padding: 10px; /* Padding for button */
+    border-radius: 10px; /* Rounded corners for button */
+    color: #fff; /* White text */
+    font-size: 16px; /* Button text size */
+    transition: 0.3s ease-in;
+}
+
+.submit:hover {
+    background-color: #4A4947; /* Change color on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9); /* Scale down */
+        opacity: 1; /* Full opacity */
+    }
+    to {
+        transform: scale(1.8); /* Scale up */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin-top: -200px;
+    }
+
+    .inputContainer {
+        flex: 1 1 100%; /* Stack inputs vertically on small screens */
+    }
+
+    .container {
+        margin-top: -300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 1rem; /* Smaller padding on small screens */
+        margin-top: -400px;
+    }
+
+    .heading {
+        font-size: 1.5rem; /* Smaller heading size */
+    }
+
+    .submit {
+        font-size: 0.9rem; /* Smaller button text */
+    }
+}
