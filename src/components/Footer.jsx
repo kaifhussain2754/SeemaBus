@@ -1,112 +1,141 @@
 import React from 'react';
-import './Footer.module.css';
 
 const Footer = () => {
   return (
-    <div className="footer-wrapper">
+    <footer style={{ backgroundColor: '#D8D2C2', color: '#4A4947', padding: '40px 0' }}>
       {/* Top Banner */}
-      <div className="top-banner">
-        <div className="banner-content">
-          <div className="icon-wrapper">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              aria-hidden="true"
-            >
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
+      <div className="container mb-4">
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column', // Stacks vertically on smaller screens
+            alignItems: 'center',
+            border: '1px solid #B17457',
+            borderRadius: '5px',
+            padding: '20px',
+            backgroundColor: '#fff',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            textAlign: 'center',
+          }}
+          className="d-md-flex justify-content-between align-items-center"
+        >
+          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+            <div className="icon-wrapper me-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+            </div>
+            <div>
+              <h5 style={{ marginBottom: '10px' }}>Connect with Our Bus Service Experts</h5>
+              <p style={{ marginBottom: '0' }}>Call us now for the best travel deals!</p>
+            </div>
           </div>
-          <div className="banner-text">
-            <h3>Connect With Our Fleet Expert Representative will help you.</h3>
-            <p>Call Us and we'll send the best deals to you</p>
-          </div>
+          <a
+            href="tel:+919166185545"
+            style={{
+              backgroundColor: '#B17457',
+              color: '#fff',
+              padding: '10px 20px',
+              textDecoration: 'none',
+              borderRadius: '5px',
+            }}
+            aria-label="Call us at +91 91661 85545"
+          >
+            Call Us Now +91-9166185545
+          </a>
         </div>
-        <a href="tel:+917414000073" className="call-button" aria-label="Call us at +91-7414000073">
-          Call Us Now +91-7414000073
-        </a>
       </div>
 
       {/* Main Footer */}
-      <div className="main-footer">
-        <div className="footer-grid">
+      <div className="container">
+        <div className="row text-center text-md-start">
           {/* Company Info */}
-          <div className="footer-column company-info">
-            <img src="/logo-placeholder.png" alt="Satnam Travels" className="company-logo" />
+          <div className="col-md-3 mb-4">
+            <img
+              src="/logo.png"
+              alt="Seema Bus Service"
+              className="img-fluid mb-3"
+              style={{ width: '150px', height: 'auto' }} // Adjust the logo size
+            />
             <p>
-              At Satnam travels, we prioritize you, your comfort and convenience. Our fleet of luxury vehicles is equipped with modern amenities and maintained to the highest standards, ensuring a comfortable and stress-free journey for you.
+              At Seema Bus Service, we prioritize your comfort and convenience. Our fleet of modern buses ensures a smooth and enjoyable journey for all our passengers.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div className="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-              {['Home', 'About Us', 'Tour Packages', 'Gallery', 'Blog', 'Contact'].map((link) => (
+          <div className="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul className="list-unstyled">
+              {['Home', 'About Us', 'Services', 'Gallery', 'Blog', 'Contact'].map((link) => (
                 <li key={link}>
-                  <a href="#">{link}</a>
+                  <a href="#" style={{ color: '#4A4947', textDecoration: 'none' }}>{link}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Tour Packages */}
-          <div className="footer-column">
-            <h3>Tour Packages</h3>
-            <ul>
+          <div className="col-md-3 mb-4">
+            <h5>Tour Packages</h5>
+            <ul className="list-unstyled">
               {[
-                'Jaipur to Agra Same Day Tour',
-                'Jaipur to Ranthambore Same Day Tour',
-                'Jaipur to Khatushyam Ji Same Day Tour',
-                'Jaipur to Pushkar Same Day Tour'
+                'Rajasthan Tour Packages',
+                'Manali Tour Packages',
+                'Delhi Tour Packages',
+                'Agra Tour Packages',
+                'Kerela Tour Packages',
+                'Kashmir Tour Packages',
               ].map((tour) => (
                 <li key={tour}>
-                  <a href="#">{tour}</a>
+                  <a href="#" style={{ color: '#4A4947', textDecoration: 'none' }}>{tour}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="footer-column">
-            <h3>Contact Info</h3>
-            <div className="contact-info">
-              <p>Shop No 33, Sethi Colony, Transport Nagar, Jaipur, Rajasthan 302004</p>
-              <p><a href="tel:+919414051561">+91 941 405 1561</a></p>
-              <p><a href="tel:+919929111561">+91 992 911 1561</a></p>
-              <p><a href="tel:+917414000073">+91 741 400 0073</a></p>
-              <p><a href="mailto:info@satnamtravels.in">info@satnamtravels.in</a></p>
-            </div>
+          <div className="col-md-3 mb-4">
+            <h5>Contact Info</h5>
+            <address style={{ color: '#4A4947' }}>
+            26, Shyam Vihar, Opposite Balati Factory, Agra Road, Jaipur, Rajasthan<br />
+              <a href="tel:+919414051561" style={{ color: '#4A4947', textDecoration: 'none' }}>+91 916 618 5545</a><br />
+              <a href="mailto:info@seemabusservice.in" style={{ color: '#4A4947', textDecoration: 'none' }}>seemabusservices@gmail.com</a>
+            </address>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="bottom-bar">
-        <div className="bottom-content">
-          <p>© 2024 Satnam Travels. All rights reserved.</p>
-          <div className="social-links">
+      <div style={{ backgroundColor: '#4A4947', color: '#fff', padding: '15px 0', marginTop: '20px' }}>
+        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <p style={{ marginBottom: '10px', textAlign: 'center' }}>© 2024 Seema Bus Service. All rights reserved.</p>
+          <div className="d-flex justify-content-center">
             {['facebook', 'instagram', 'youtube', 'linkedin', 'tripadvisor'].map((social) => (
-              <a 
-                key={social} 
-                href={`https://${social}.com`} 
-                className={`social-icon ${social}`} 
+              <a
+                key={social}
+                href={`https://${social}.com`}
+                style={{ color: '#fff', marginLeft: '15px', textDecoration: 'none' }}
                 aria-label={`Follow us on ${social.charAt(0).toUpperCase() + social.slice(1)}`}
               >
-                <span className="sr-only">{social}</span>
+                <i className={`bi bi-${social}`}></i>
               </a>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

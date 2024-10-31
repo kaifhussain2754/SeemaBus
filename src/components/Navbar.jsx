@@ -15,7 +15,7 @@ const SeemaBusNavbar = () => {
   return (
     <>
       <TopBanner /> {/* Correctly wrapped in a fragment */}
-      <Navbar expand="lg" className={styles.navbar} collapseOnSelect>
+      <Navbar expand="lg" className={`${styles.navbar} sticky-top`} collapseOnSelect>
         <Container className="d-flex justify-content-between align-items-center">
           {/* Left: Logo */}
           <Navbar.Brand href="/" className={`${styles.brand} d-flex align-items-center`}>
@@ -49,16 +49,17 @@ const SeemaBusNavbar = () => {
                 onMouseLeave={() => setShowDropdown(false)}
                 className={styles.navLink}
               >
-                <NavDropdown.Item href="#package1">Honeymoon Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package2">Adventure Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package3">Weekend Getaways</NavDropdown.Item>
-                <NavDropdown.Item href="#package4">Family Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package5">Custom Packages</NavDropdown.Item>
+                <NavDropdown.Item href="#package1">Rajasthan Tour Packages</NavDropdown.Item>
+                <NavDropdown.Item href="#package2">Agra Tour Packages</NavDropdown.Item>
+                <NavDropdown.Item href="#package3">Manali Tour Packages</NavDropdown.Item>
+                <NavDropdown.Item href="#package4">Kerela Packages</NavDropdown.Item>
+                <NavDropdown.Item href="#package5">Delhi Tour Packages</NavDropdown.Item>
+                <NavDropdown.Item href="/allpackages">More Tour Packages</NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
-              <Nav.Link href="#gallery" className={styles.navLink}>Image Gallery</Nav.Link>
-              <Nav.Link href="#contact" className={styles.navLink}>Contact</Nav.Link>
-              <Nav.Link href="#blogs" className={styles.navLink}>Our Blogs</Nav.Link>
+              <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>
+              <Nav.Link href="/contact" className={styles.navLink}>Contact</Nav.Link>
+              <Nav.Link href="/blogs" className={styles.navLink}>Our Blogs</Nav.Link>
             </Nav>
           </Navbar.Collapse>
 

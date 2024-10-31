@@ -10,6 +10,7 @@ import SeemaBusNavbar from './components/Navbar';
 import TourPackages from './components/TourPackage';
 import AboutUs from './components/About';
 import Footer from './components/Footer';
+import ContactUs from './components/ContactUs';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/packages" element={<TourPackages />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/Contact" element={<ContactUs />} />
+        <Route path="/allpackages" element={<TourPackages/>} />
         {/* Add other routes here */}
       </Routes>
       <TapToCall />

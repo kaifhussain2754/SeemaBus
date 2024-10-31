@@ -1,6 +1,5 @@
-// src/components/BookingForm.js
-import React, { useState, useEffect } from 'react';
-import styles from './BookingForm.module.css';
+import React, { useState } from 'react';
+import { Container, TextField, Button, Grid } from '@mui/material';
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +10,7 @@ const BookingForm = () => {
     drop: '',
     travelDate: '',
     requests: '',
-    passengers: '', // New field for number of passengers
+    passengers: '',
   });
 
   const handleChange = (e) => {
@@ -26,140 +25,126 @@ const BookingForm = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.heading} data-aos="fade-down">Book Your Next Trip</h2>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.flex}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Full Name</span>
-            </label>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Phone Number</span>
-            </label>
-          </div>
-        </div>
-
-        <div className={styles.flex}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Email Address</span>
-            </label>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="text"
-                name="pickup"
-                value={formData.pickup}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Pickup Destination</span>
-            </label>
-          </div>
-        </div>
-
-        <div className={styles.flex}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="text"
-                name="drop"
-                value={formData.drop}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Drop Destination</span>
-            </label>
-          </div>
-
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="date"
-                name="travelDate"
-                value={formData.travelDate}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                placeholder=" "
-              />
-              <span>Travel Date</span>
-            </label>
-          </div>
-        </div>
-
-        <div className={styles.flex}>
-          <div className={styles.inputContainer}>
-            <label className={styles.label}>
-              <input
-                type="number"
-                name="passengers"
-                value={formData.passengers}
-                onChange={handleChange}
-                className={styles.input}
-                required
-                min="1"
-                placeholder=" "
-              />
-              <span>No. of Passengers</span>
-            </label>
-          </div>
-        </div>
-
-        <div className={styles.inputContainer}>
-          <label className={styles.label}>
-            <textarea
-              name="requests"
-              value={formData.requests}
+    <Container
+      maxWidth="md"
+      sx={{
+        marginTop: { xs: '-350px', sm: '-150px' },
+        padding: '20px',
+        backgroundColor: '#fff',
+        borderRadius: '8px',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <h2 style={{ color: '#B17457', fontWeight: '600' }}>Book Your Next Trip</h2>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Full Name"
+              variant="outlined"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
-              className={styles.input}
               required
-              placeholder=" "
+              fullWidth
             />
-            <span>Special Requests</span>
-          </label>
-        </div>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Phone Number"
+              variant="outlined"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Email Address"
+              variant="outlined"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Pickup Destination"
+              variant="outlined"
+              name="pickup"
+              value={formData.pickup}
+              onChange={handleChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Drop Destination"
+              variant="outlined"
+              name="drop"
+              value={formData.drop}
+              onChange={handleChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              type="text" // Change this to text to allow custom formatting
+              label="Travel Date"
+              placeholder="dd/mm/yy" // Use placeholder to show the required format
+              variant="outlined"
+              name="travelDate"
+              value={formData.travelDate}
+              onChange={handleChange}
+              required
+              fullWidth
+            />
+          </Grid>
 
-        <button type="submit" className={styles.submit}>Submit</button>
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="No. of Passengers"
+              type="number"
+              variant="outlined"
+              name="passengers"
+              value={formData.passengers}
+              onChange={handleChange}
+              required
+              inputProps={{ min: 1 }}
+              fullWidth
+            />
+          </Grid>
+        </Grid>
+        <TextField
+          label="Special Requests"
+          variant="outlined"
+          name="requests"
+          value={formData.requests}
+          onChange={handleChange}
+          multiline
+          rows={4}
+          fullWidth
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            backgroundColor: '#B17457',
+            color: '#fff',
+            '&:hover': { backgroundColor: '#4A4947' },
+            width: '100%', // Full width for the button
+          }}
+        >
+          Submit
+        </Button>
       </form>
-    </div>
+    </Container>
   );
 };
 
