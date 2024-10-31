@@ -45,22 +45,43 @@
 }
 
 /* Adjust toggle button size */
+/* Additional styles for the toggle button */
 .toggleButton {
   border: none; /* Remove border */
   background: transparent; /* Make background transparent */
+  /* Increase the size */
+  padding: 0.5rem; /* Add some padding for a better touch target */
 }
 
-/* Adjust toggle button icon size */
-.toggle-button .navbar-toggler-icon {
-  width: 30px; /* Adjust icon width */
-  height: 30px; /* Adjust icon height */
+.toggleButton .navbar-toggler-icon {
+  width: 30px; /* Original size */
+  height: 30px; /* Original size */
   background-size: 30px 30px; /* Ensure background image scales correctly */
 }
-  
-  .navDropdown .dropdown-item:hover {
-    background-color: #B17457; /* Change background color on hover */
-    color: #FAF7F0; /* Change text color on hover */
-  }
+
+.toggleButton.active {
+  background: transparent; /* Keep it transparent when active */
+}
+
+/* Additional styles for active state if needed */
+.toggleButton.active {
+  background: transparent; /* Keep it transparent when active */
+}
+
+
+/* Existing styles... */
+
+.navDropdown .dropdown-menu {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Slide up effect */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.navDropdown.show .dropdown-menu {
+  opacity: 1; /* Visible when dropdown is shown */
+  transform: translateY(0); /* Reset position */
+}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -74,6 +95,13 @@
 
   .bookButton {
     font-size: 0.9rem; /* Adjust button font size for medium screens */
+  }
+
+  /* Increase the size of the toggle icon for mobile devices */
+  .toggle-button .navbar-toggler-icon {
+    width: 50px; /* Increase icon width */
+    height: 50px; /* Increase icon height */
+    background-size: 40px 40px; /* Ensure background image scales correctly */
   }
 }
 
@@ -92,25 +120,24 @@
 
 /* Styles for positioning in mobile view */
 @media (max-width: 768px) {
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0;
-    }
-  
-    .bookButton {
-      order: 1; /* Place book button before the toggle */
-      margin-right: 0.5rem; /* Spacing between button and toggle */
-    }
-  
-    .toggleButton {
-      order: 2; /* Place toggle after the book button */
-      margin-left: auto;
-    }
-  
-    .navbar-collapse {
-      text-align: center; /* Center items in the collapsible navbar */
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
   }
-  
+
+  .bookButton {
+    order: 1; /* Place book button before the toggle */
+    margin-right: 0.5rem; /* Spacing between button and toggle */
+  }
+
+  .toggleButton {
+    order: 2; /* Place toggle after the book button */
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    text-align: center; /* Center items in the collapsible navbar */
+  }
+}

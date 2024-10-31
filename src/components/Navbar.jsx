@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Button, Container, NavDropdown } from 'react-bootstrap';
+import { FaTimes } from 'react-icons/fa'; // Import the close icon
 import logo from '/logo.png'; // Adjust path as needed
 import BookingModal from './BookingModal'; // Import the BookingModal component
 import styles from './SeemaBusNavbar.module.css'; // CSS module for styling
@@ -8,14 +9,24 @@ import TopBanner from './TopBanner'; // Ensure you import the TopBanner componen
 const SeemaBusNavbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false); // State to control the modal visibility
+  const [expanded, setExpanded] = useState(false); // State to track navbar expansion
 
   const handleShow = () => setShowModal(true); // Function to show the modal
   const handleClose = () => setShowModal(false); // Function to hide the modal
+  const handleToggle = () => setExpanded(!expanded); // Function to toggle navbar expansion
+
+  // Inline styles for dropdown
+  const dropdownMenuStyle = {
+    transition: 'opacity 0.3s ease, transform 0.3s ease',
+    opacity: showDropdown ? 1 : 0,
+    transform: showDropdown ? 'translateY(0)' : 'translateY(-10px)',
+    display: showDropdown ? 'block' : 'none',
+  };
 
   return (
     <>
-      <TopBanner /> {/* Correctly wrapped in a fragment */}
-      <Navbar expand="lg" className={`${styles.navbar} sticky-top`} collapseOnSelect>
+      <TopBanner />
+      <Navbar expand="lg" className={`${styles.navbar} sticky-top`} collapseOnSelect expanded={expanded}>
         <Container className="d-flex justify-content-between align-items-center">
           {/* Left: Logo */}
           <Navbar.Brand href="/" className={`${styles.brand} d-flex align-items-center`}>
@@ -27,14 +38,20 @@ const SeemaBusNavbar = () => {
           </Navbar.Brand>
 
           {/* Book Now Button for Small Screens */}
-          <div className="d-lg-none"> {/* Visible on small screens */}
+          <div className="d-lg-none"> 
             <Button className={`${styles.bookButton} ${styles.smallButton}`} onClick={handleShow}>
               Book Now
             </Button>
           </div>
 
           {/* Toggle Button for Small Screens */}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggleButton} />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className={`${styles.toggleButton} ${expanded ? styles.active : ''}`}
+            onClick={handleToggle} // Toggle navbar on click
+          >
+            {expanded ? <FaTimes size={30} /> : <span className="navbar-toggler-icon"></span>}
+          </Navbar.Toggle>
 
           {/* Center: Nav Links */}
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
@@ -49,12 +66,14 @@ const SeemaBusNavbar = () => {
                 onMouseLeave={() => setShowDropdown(false)}
                 className={styles.navLink}
               >
-                <NavDropdown.Item href="#package1">Rajasthan Tour Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package2">Agra Tour Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package3">Manali Tour Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package4">Kerela Packages</NavDropdown.Item>
-                <NavDropdown.Item href="#package5">Delhi Tour Packages</NavDropdown.Item>
-                <NavDropdown.Item href="/allpackages">More Tour Packages</NavDropdown.Item>
+                <div style={dropdownMenuStyle}> {/* Apply inline styles here */}
+                  <NavDropdown.Item href="#package1">Rajasthan Tour Packages</NavDropdown.Item>
+                  <NavDropdown.Item href="#package2">Agra Tour Packages</NavDropdown.Item>
+                  <NavDropdown.Item href="#package3">Manali Tour Packages</NavDropdown.Item>
+                  <NavDropdown.Item href="#package4">Kerela Packages</NavDropdown.Item>
+                  <NavDropdown.Item href="#package5">Delhi Tour Packages</NavDropdown.Item>
+                  <NavDropdown.Item href="/allpackages">More Tour Packages</NavDropdown.Item>
+                </div>
               </NavDropdown>
               <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
               <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>
@@ -64,7 +83,7 @@ const SeemaBusNavbar = () => {
           </Navbar.Collapse>
 
           {/* Book Now Button for Larger Screens */}
-          <div className="d-none d-lg-block"> {/* Hidden on small screens */}
+          <div className="d-none d-lg-block">
             <Button className={styles.bookButton} onClick={handleShow}>Book Now</Button>
           </div>
         </Container>

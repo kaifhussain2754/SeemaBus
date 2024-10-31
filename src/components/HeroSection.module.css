@@ -128,14 +128,15 @@
 
 @media (max-width: 576px) {
     .content {
-        top: 5%; /* Keep consistent top spacing */
+        top: 10%; /* Keep consistent top spacing */
+        width: 100%;
     }
 
     .slide{
-        height: 40vh;
+        height: 50vh;
     }
 
     .caption {
-        font-size: 0.8rem; /* Further reduce font size */
+        font-size: 0.5rem; /* Further reduce font size */
     }
 }

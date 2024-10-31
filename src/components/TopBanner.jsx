@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 const TopBanner = () => {
@@ -7,9 +9,8 @@ const TopBanner = () => {
       style={{
         backgroundColor: '#4A4947',
         color: '#FAF7F0',
-        padding: '10px 20px',
+        padding: '5px 10px', // Reduced padding to prevent conflicts
         textAlign: 'center',
-        position: 'relative',
       }}
     >
       <div
@@ -26,24 +27,26 @@ const TopBanner = () => {
           style={{
             flex: 1,
             textAlign: 'left',
-            paddingRight: '20px',
-            fontSize: '1rem',
+            fontSize: '0.9rem', // Font size for mobile
+            paddingRight: '10px', // Adjusted padding
+            display: 'flex',
+            alignItems: 'center', // Align icon and text vertically
           }}
         >
-          📞 For Bookings: +91 91661 85546
+          <FontAwesomeIcon icon={faPhone} style={{ marginRight: '5px', fontSize: '1.2rem' }} /> {/* Font Awesome phone icon */}
+          | For Bookings: +91 91661 85546
         </span>
         <div
           style={{
             display: 'flex',
-            gap: '15px',
-            justifyContent: 'flex-end',
+            gap: '10px', // Reduced gap for better spacing
           }}
         >
           <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
             <FaInstagram
               style={{
                 color: '#FAF7F0',
-                fontSize: '1.5rem',
+                fontSize: '1.2rem', // Icon size for mobile
                 transition: 'color 0.3s ease',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#B17457')}
@@ -54,18 +57,18 @@ const TopBanner = () => {
             <FaFacebook
               style={{
                 color: '#FAF7F0',
-                fontSize: '1.5rem',
+                fontSize: '1.2rem', // Icon size for mobile
                 transition: 'color 0.3s ease',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#B17457')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#FAF7F0')}
             />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
             <FaWhatsapp
               style={{
                 color: '#FAF7F0',
-                fontSize: '1.5rem',
+                fontSize: '1.2rem', // Icon size for mobile
                 transition: 'color 0.3s ease',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#B17457')}
@@ -74,40 +77,6 @@ const TopBanner = () => {
           </a>
         </div>
       </div>
-
-      {/* Inline Media Queries */}
-      <style>
-        {`
-          @media (max-width: 768px) {
-            span {
-              font-size: 0.9rem;
-              padding-right: 10px;
-              text-align: center;
-            }
-            div > div {
-              justify-content: center;
-              gap: 10px;
-            }
-            a > svg {
-              font-size: 1.2rem;
-            }
-          }
-
-          @media (max-width: 576px) {
-            span {
-              font-size: 0.8rem;
-              padding-right: 0;
-            }
-            div > div {
-              justify-content: center;
-              gap: 8px;
-            }
-            a > svg {
-              font-size: 1rem;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 };

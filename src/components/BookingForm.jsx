@@ -28,7 +28,7 @@ const BookingForm = () => {
     <Container
       maxWidth="md"
       sx={{
-        marginTop: { xs: '-350px', sm: '-150px' },
+        marginTop: { xs: '-300px', sm: '-150px' },
         padding: '20px',
         backgroundColor: '#fff',
         borderRadius: '8px',
