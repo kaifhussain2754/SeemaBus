@@ -15,36 +15,34 @@ const BookingModal = ({ showModal, handleClose }) => {
             <Form.Control type="text" placeholder="Enter your name" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter your email" required />
-          </Form.Group>
-
           <Form.Group className="mb-3" controlId="formPhone">
             <Form.Label>Phone Number</Form.Label>
             <Form.Control type="tel" placeholder="Enter your phone number" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formDate">
-            <Form.Label>Date</Form.Label>
-            <Form.Control type="date" required />
+          <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter your email" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formPackage">
-            <Form.Label>Package</Form.Label>
-            <Form.Control as="select" required>
-              <option value="">Select a package</option>
-              <option value="honeymoon">Honeymoon Package</option>
-              <option value="adventure">Adventure Package</option>
-              <option value="weekend">Weekend Getaway</option>
-              <option value="family">Family Package</option>
-              <option value="custom">Custom Package</option>
-            </Form.Control>
+          <Form.Group className="mb-3" controlId="formPickup">
+            <Form.Label>Pickup Location</Form.Label>
+            <Form.Control type="text" placeholder="Enter pickup location" required />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formMessage">
-            <Form.Label>Message</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="Additional details or requests" />
+          <Form.Group className="mb-3" controlId="formDrop">
+            <Form.Label>Drop Location</Form.Label>
+            <Form.Control type="text" placeholder="Enter drop location" required />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formPassengers">
+            <Form.Label>No. Of Passengers</Form.Label>
+            <Form.Control type="number" placeholder="Enter number of passengers" required min="1" />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formSpecialRequest">
+            <Form.Label>Special Request</Form.Label>
+            <Form.Control as="textarea" rows={3} placeholder="Any special requests or details" />
           </Form.Group>
         </Form>
       </Modal.Body>
@@ -52,7 +50,12 @@ const BookingModal = ({ showModal, handleClose }) => {
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="primary" type="submit" onClick={handleClose}>
+        <Button 
+          variant="primary" 
+          type="submit" 
+          onClick={handleClose} 
+          style={{ backgroundColor: '#B17457', border: 'none' }}
+        >
           Submit Booking
         </Button>
       </Modal.Footer>

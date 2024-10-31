@@ -1,5 +1,6 @@
 .modal {
-    background-color: #FAF7F0; /* Light background color */
+    background-color: rgba(250, 247, 240, 0.2); /* Light background color with slight transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
   }
   
   .modal-body {
@@ -31,5 +32,10 @@
   
   .btn-primary:hover {
     background-color: #4A4947; /* Darken on hover */
+  }
+  
+  /* Optional: Style for the backdrop */
+  .modal-backdrop {
+    backdrop-filter: blur(5px); /* Slight blur on backdrop */
   }
   
