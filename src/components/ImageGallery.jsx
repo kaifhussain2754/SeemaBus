@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ModalImage from 'react-modal-image';
 import styles from './ImageGallery.module.css';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const ImageGallery = () => {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({ once: true }); // Initialize AOS and ensure animations run only once
+  }, []);
+
   // Define the image data inside the component
   const images = [
     {
@@ -53,19 +60,15 @@ const ImageGallery = () => {
       src: '/aboutimage.jpeg',
       alt: 'Image 12 Description',
     },
-    {
-      src: '/aboutimage.jpeg',
-      alt: 'Image 13 Description',
-    },
     // Add more images as needed
   ];
 
   return (
-    <div className={styles.galleryPage}>
+    <div className={styles.galleryPage} data-aos="fade-in" data-aos-duration="1000">
       <h1 className={styles.galleryTitle}>Our Image Gallery</h1>
       <div className={styles.galleryContainer}>
         {images.map((image, index) => (
-          <div className={styles.galleryItem} key={index}>
+          <div className={styles.galleryItem} key={index} data-aos="fade-in" data-aos-duration="1000">
             <ModalImage
               small={image.src} // Thumbnail image (small)
               large={image.src} // Full-size image (large)

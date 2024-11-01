@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, TextField, Button, Grid, Typography } from '@mui/material';
 import SuccessModal from './SuccessModal'; // Import the existing SuccessModal
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,11 @@ const ContactUs = () => {
   });
   const [result, setResult] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,16 +67,24 @@ const ContactUs = () => {
   };
 
   return (
-    <div style={{
-      backgroundImage: 'url(/contactimg.jpeg)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: '20px',
-    }}>
+    <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+      {/* Overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: 'url(/contactimg.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          zIndex: -1,
+          filter: 'brightness(0.5)', // Darken the background
+        }}
+      ></div>
+      
       <Container
         maxWidth="sm"
         sx={{
@@ -78,6 +93,8 @@ const ContactUs = () => {
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
           padding: '20px',
         }}
+        data-aos="fade-in" // Apply AOS fade-in effect
+        data-aos-duration="1000" // Duration of the fade-in
       >
         <Typography variant="h4" align="center" style={{ color: '#B17457', marginBottom: '20px' }}>
           Contact Us

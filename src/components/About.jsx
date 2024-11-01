@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import CountUp from 'react-countup';
 import styles from './AboutPage.module.css'; // Import your CSS module
 import { statsAtom } from './StatsAtom';
@@ -7,9 +7,11 @@ import { useRecoilValue } from 'recoil';
 import TestimonialSlider from './Testimonial';
 import AOS from 'aos'; // Import AOS
 import 'aos/dist/aos.css'; // Import AOS styles
+import InquireModal from './InquiryModal'; // Import your InquireModal component
 
 const AboutUs = () => {
     const stats = useRecoilValue(statsAtom); // Access the stats atom
+    const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
 
     useEffect(() => {
         AOS.init(); // Initialize AOS
@@ -20,7 +22,12 @@ const AboutUs = () => {
     };
 
     const handleEnquireNow = () => {
-        alert("Enquiry form will open!"); // Placeholder for enquiry logic
+        console.log("Enquire Now clicked");
+        setIsModalOpen(true); // This should trigger the modal to open
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false); // This will close the modal
     };
 
     return (
@@ -80,7 +87,7 @@ const AboutUs = () => {
                     </div>
                 </div>
 
-                {/* Statistics Section with White Background */}
+                {/* Statistics Section */}
                 <div className={`${styles.statsContainer} mt-5`}>
                     <div className="row">
                         <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
@@ -148,6 +155,9 @@ const AboutUs = () => {
             <div className="mt-5">
                 <TestimonialSlider />
             </div>
+
+            {/* Render the Inquiry Modal */}
+            <InquireModal open={isModalOpen} onClose={closeModal} />
         </div>
     );
 };

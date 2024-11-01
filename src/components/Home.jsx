@@ -1,14 +1,20 @@
 // src/Home.jsx
-import React from 'react';
-import HeroSection from './HeroSection';;
+import React, { useEffect } from 'react';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS styles
+import HeroSection from './HeroSection';
 import BookingForm from './BookingForm';
 import Services from './Services';
 import TourPackages from './TourPackage';
 import AboutUs from './About';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS
+  }, []);
+
   return (
-    <div>
+    <div data-aos="fade-in" data-aos-duration="1000">
       <HeroSection />
       <BookingForm />
       <Services />

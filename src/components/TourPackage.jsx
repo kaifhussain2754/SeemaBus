@@ -60,7 +60,7 @@ const TourPackages = () => {
   }, []);
 
   return (
-    <div className="container my-5">
+    <div className="container my-5" data-aos='fade-in'>
       <h1 className="text-center mb-4">Explore Our Tour Packages</h1>
       <p className="text-center mb-5">
         Embark on a journey with Pushpganga Tours & Travels. Our carefully crafted tour packages, where adventure meets luxury and memories are made.

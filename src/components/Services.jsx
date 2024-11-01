@@ -48,7 +48,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="container my-5">
+    <div className="container my-5" data-aos='fade-in'>
       <h1 className="text-center mb-4">Explore our Premium Services</h1>
       <p className="text-center mb-5">
         Discover the unmatched luxury and dependability of our premium bus services, designed for safety and comfort to provide an exceptional travel experience for every passenger.
