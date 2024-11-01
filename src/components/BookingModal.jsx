@@ -29,7 +29,7 @@ const BookingModal = ({ showModal, handleClose }) => {
       formDataObj.append(key, formData[key]);
     }
 
-    formDataObj.append("access_key", "02d6bfa2-a2e8-4f71-b08f-780980ef55b4"); // Your access key
+    formDataObj.append("access_key", "1510a139-e0ac-4347-98f3-01424627ef7e"); // Your access key
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
