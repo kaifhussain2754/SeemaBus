@@ -13,7 +13,7 @@
 
 .galleryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Increased min-width from 200px to 220px */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 15px;
 }
 
@@ -31,5 +31,44 @@
 }
 
 .galleryImage:hover {
-  transform: scale(1.1); /* Slightly increased the hover scaling effect */
+  transform: scale(1.1);
 }
+
+/* Add this to your ImageGallery.module.css */
+
+/* Modal styles */
+/* ImageGallery.module.css */
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999; /* Ensure it's above other content */
+}
+
+.modal.show {
+  /* No need for additional styles here; the AOS will handle the animation */
+}
+
+.modalContent {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
