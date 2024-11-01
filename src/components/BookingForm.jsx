@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Grid } from '@mui/material';
+import SuccessModal from './SuccessModal'; // Import the SuccessModal
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -12,16 +13,63 @@ const BookingForm = () => {
     requests: '',
     passengers: '',
   });
+  const [result, setResult] = useState(""); // State to manage submission result
+  const [modalOpen, setModalOpen] = useState(false); // State to control modal visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Booking Details:', formData);
-    // Add form submission logic here
+    setResult("Sending....");
+
+    // Create FormData object
+    const formSubmissionData = new FormData();
+    formSubmissionData.append("access_key", "02d6bfa2-a2e8-4f71-b08f-780980ef55b4");
+    formSubmissionData.append("name", formData.name);
+    formSubmissionData.append("phone", formData.phone);
+    formSubmissionData.append("email", formData.email);
+    formSubmissionData.append("pickup", formData.pickup);
+    formSubmissionData.append("drop", formData.drop);
+    formSubmissionData.append("travelDate", formData.travelDate);
+    formSubmissionData.append("requests", formData.requests);
+    formSubmissionData.append("passengers", formData.passengers);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formSubmissionData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        setModalOpen(true); // Open the modal on success
+        setFormData({ // Reset form fields
+          name: '',
+          phone: '',
+          email: '',
+          pickup: '',
+          drop: '',
+          travelDate: '',
+          requests: '',
+          passengers: '',
+        });
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.error("Submission Error", error);
+      setResult("There was an error submitting the form.");
+    }
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false); // Close the modal
   };
 
   return (
@@ -106,7 +154,6 @@ const BookingForm = () => {
               fullWidth
             />
           </Grid>
-
           <Grid item xs={12} sm={6}>
             <TextField
               label="No. of Passengers"
@@ -144,6 +191,10 @@ const BookingForm = () => {
           Submit
         </Button>
       </form>
+      <span>{result}</span>
+      
+      {/* Render SuccessModal conditionally */}
+      {modalOpen && <SuccessModal onClose={handleCloseModal} />}
     </Container>
   );
 };
