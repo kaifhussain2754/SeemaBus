@@ -10,6 +10,32 @@
   font-size: 1.5rem;
 }
 
+.brandName {
+  font-size: 1.5rem; /* Adjust as necessary */
+  margin-left: 10px; /* Space between logo and name */
+  color: #333; /* Color of the brand name */
+}
+
+.brandName {
+  font-size: 1.5rem; /* Default size for larger screens */
+  margin-left: 10px; /* Space between logo and name */
+  color: #333; /* Color of the brand name */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .brandName {
+    font-size: 1.2rem; /* Adjust the size for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .brandName {
+    display: none; /* Further reduce size for very small screens */
+  }
+}
+
+
 .logo {
   height: 70px; /* Default height for large screens */
   transition: height 0.3s ease-in-out; /* Smooth transition for height change */

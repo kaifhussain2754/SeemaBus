@@ -12,8 +12,8 @@ const TourPackages = () => {
     },
     {
       image: '/goldentriagle.jpeg',
-      title: 'Golden Triangle Tour Package',
-      description: 'Experience the famous Golden Triangle route: Delhi, Agra, and Jaipur, filled with history and grandeur.',
+      title: 'Triple City Wonders Tour Package',
+      description: 'Discover the enchanting heritage and vibrant cultures of Delhi, Agra, and Jaipur with our Triple City Wonders Tour Package!',
     },
     {
       image: '/manali.jpg',

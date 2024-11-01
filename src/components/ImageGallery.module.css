@@ -25,6 +25,7 @@
 
 .galleryImage {
   width: 100%;
+  cursor: pointer;
   height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;

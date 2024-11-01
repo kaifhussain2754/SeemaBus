@@ -9,12 +9,12 @@
 }
 
 .card-img-top {
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease; /* Transition for smooth scaling */
 }
 
-.card:hover .card-img-top {
+.card:hover .card-img-top:hover {
   transform: scale(1.2); /* Zoom in the image on hover */
 }
 

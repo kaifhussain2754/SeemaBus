@@ -23,7 +23,7 @@ function App() {
       // Simulate a loading period
       setTimeout(() => {
         setLoading(false); // Set loading to false after data is fetched
-      }, 700);
+      }, 1000);
     };
 
     loadData();

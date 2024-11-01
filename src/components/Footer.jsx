@@ -78,9 +78,16 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              {['Home', 'About Us', 'Services', 'Gallery', 'Blog', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a href="#" style={{ color: '#4A4947', textDecoration: 'none' }}>{link}</a>
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Services', path: '/services' },
+                { name: 'Gallery', path: '/gallery' },
+                { name: 'Blog', path: '/blog' },
+                { name: 'Contact', path: '/contact' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a href={link.path} style={{ color: '#4A4947', textDecoration: 'none' }}>{link.name}</a>
                 </li>
               ))}
             </ul>
@@ -109,12 +116,19 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5>Contact Info</h5>
             <address style={{ color: '#4A4947' }}>
-            26, Shyam Vihar, Opposite Balati Factory, Agra Road, Jaipur, Rajasthan<br />
+              26, Shyam Vihar, Opposite Balati Factory, Agra Road, Jaipur, Rajasthan<br />
               <a href="tel:+919414051561" style={{ color: '#4A4947', textDecoration: 'none' }}>+91 916 618 5545</a><br />
               <a href="mailto:info@seemabusservice.in" style={{ color: '#4A4947', textDecoration: 'none' }}>seemabusservices@gmail.com</a>
             </address>
           </div>
         </div>
+      </div>
+
+      {/* Developer Info */}
+      <div style={{ backgroundColor: '#D8D2C2', color: '#4A4947', padding: '10px 0', textAlign: 'center' }}>
+        <p style={{ margin: '0' }}>
+          Developed & Maintained by <strong><a href="https://linktr.ee/nebulixsoftware" style={{ color: '#4A4947', textDecoration: 'underline' }}>Nebulix Software Pvt Ltd.</a></strong>
+        </p>
       </div>
 
       {/* Bottom Bar */}

@@ -42,7 +42,7 @@ const TopBanner = () => {
             gap: '10px', // Reduced gap for better spacing
           }}
         >
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/seemabusservices/" target="_blank" rel="noopener noreferrer">
             <FaInstagram
               style={{
                 color: '#FAF7F0',

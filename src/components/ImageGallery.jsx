@@ -7,19 +7,19 @@ const ImageGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    { src: '/hero1.jpg', alt: 'Image 1 Description' },
-    { src: '/hero2.jpg', alt: 'Image 2 Description' },
-    { src: '/hero3.jpg', alt: 'Image 3 Description' },
-    { src: '/hero4.jpg', alt: 'Image 4 Description' },
-    { src: '/service1.jpg', alt: 'Image 5 Description' },
-    { src: '/service2.jpg', alt: 'Image 6 Description' },
-    { src: '/service3.jpg', alt: 'Image 7 Description' },
-    { src: '/service4.jpg', alt: 'Image 8 Description' },
-    { src: '/service5.jpg', alt: 'Image 9 Description' },
-    { src: '/service6.jpg', alt: 'Image 10 Description' },
-    { src: '/logo.png', alt: 'Image 11 Description' },
-    { src: '/aboutimage.jpeg', alt: 'Image 12 Description' },
-    { src: '/aboutimage.jpeg', alt: 'Image 13 Description' },
+    { src: '/img1.jpeg', alt: '' },
+    { src: '/img2.jpeg', alt: '' },
+    { src: '/img3.jpeg', alt: '' },
+    { src: '/img4.jpeg', alt: '' },
+    { src: '/img5.jpeg', alt: '' },
+    { src: '/img6.jpeg', alt: '' },
+    { src: '/img7.jpeg', alt: '' },
+    { src: '/img8.jpeg', alt: '' },
+    { src: '/img9.jpeg', alt: '' },
+    { src: '/img10.jpeg', alt: '' },
+    { src: '/img11.jpeg', alt: '' },
+    { src: '/img12.jpeg', alt: '' },
+    { src: '/img13.jpeg', alt: '' },
   ];
 
   const openModal = (image) => {

@@ -31,7 +31,7 @@ const LogoLoader = () => {
       inset: 0,
       borderRadius: '50%',
       animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
-      backgroundColor: 'rgba(59, 130, 246, 0.1)'
+      backgroundColor: 'rgba(255, 0, 0, 0.1)'
     },
     pulseEffect: {
       position: 'absolute',
@@ -42,8 +42,8 @@ const LogoLoader = () => {
     },
     logoContainer: {
       position: 'relative',
-      width: '96px',
-      height: '96px',
+      width: '120px',
+      height: '120px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -54,13 +54,13 @@ const LogoLoader = () => {
       transition: 'transform 0.5s ease-in-out'
     },
     logo: {
-      width: '64px',
-      height: '64px',
+      width: '84px',
+      height: '84px',
       objectFit: 'contain'
     },
     loadingText: {
       position: 'absolute',
-      bottom: '-32px',
+      bottom: '-50px',
       left: '50%',
       transform: 'translateX(-50%)',
       width: '100%',
@@ -90,7 +90,7 @@ const LogoLoader = () => {
         
         {/* Loading text */}
         <div style={styles.loadingText}>
-          Loading...
+          Seema Bus Service
         </div>
       </div>
 

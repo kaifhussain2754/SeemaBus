@@ -27,70 +27,57 @@ const SeemaBusNavbar = () => {
     <>
       <TopBanner />
       <Navbar expand="lg" className={`${styles.navbar} sticky-top`} collapseOnSelect expanded={expanded}>
-        <Container className="d-flex justify-content-between align-items-center">
-          {/* Left: Logo */}
+        {/* Left: Logo and Brand Name */}
+        <div className="d-flex align-items-center">
           <Navbar.Brand href="/" className={`${styles.brand} d-flex align-items-center`}>
             <img
               src={logo}
               alt="Seema Bus Service Logo"
               className={`${styles.logo} d-inline-block align-top me-2`}
             />
+            <span className={styles.brandName}>Seema Bus Service</span> {/* Brand name */}
           </Navbar.Brand>
+        </div>
 
-          {/* Book Now Button for Small Screens */}
-          <div className="d-lg-none"> 
-            <Button className={`${styles.bookButton} ${styles.smallButton}`} onClick={handleShow}>
-              Book Now
-            </Button>
-          </div>
+        {/* Book Now Button for Small Screens */}
+        <div className="d-lg-none"> 
+          <Button className={`${styles.bookButton} ${styles.smallButton}`} onClick={handleShow}>
+            Book Now
+          </Button>
+        </div>
 
-          {/* Toggle Button for Small Screens */}
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            className={`${styles.toggleButton} ${expanded ? styles.active : ''}`}
-            onClick={handleToggle} // Toggle navbar on click
-          >
-            {expanded ? <FaTimes size={30} /> : <span className="navbar-toggler-icon"></span>}
-          </Navbar.Toggle>
+        {/* Toggle Button for Small Screens */}
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className={`${styles.toggleButton} ${expanded ? styles.active : ''}`}
+          onClick={handleToggle} // Toggle navbar on click
+        >
+          {expanded ? <FaTimes size={30} /> : <span className="navbar-toggler-icon"></span>}
+        </Navbar.Toggle>
 
-          {/* Center: Nav Links */}
-          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-            <Nav className="mx-auto">
-              <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
-              <Nav.Link href="/about" className={styles.navLink}>About</Nav.Link>
-              <NavDropdown
-                title="Explore Packages"
-                id="explore-packages-dropdown"
-                show={showDropdown}
-                onMouseEnter={() => setShowDropdown(true)}
-                onMouseLeave={() => setShowDropdown(false)}
-                className={styles.navLink}
-              >
-                <div style={dropdownMenuStyle}> {/* Apply inline styles here */}
-                  <NavDropdown.Item href="#package1">Rajasthan Tour Packages</NavDropdown.Item>
-                  <NavDropdown.Item href="#package2">Agra Tour Packages</NavDropdown.Item>
-                  <NavDropdown.Item href="#package3">Manali Tour Packages</NavDropdown.Item>
-                  <NavDropdown.Item href="#package4">Kerela Packages</NavDropdown.Item>
-                  <NavDropdown.Item href="#package5">Delhi Tour Packages</NavDropdown.Item>
-                  <NavDropdown.Item href="/allpackages">More Tour Packages</NavDropdown.Item>
-                </div>
-              </NavDropdown>
-              <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
-              <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>
-              <Nav.Link href="/contact" className={styles.navLink}>Contact</Nav.Link>
-              <Nav.Link href="/blogs" className={styles.navLink}>Our Blogs</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+        {/* Center: Nav Links */}
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
+          <Nav className="mx-auto">
+            <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
+            <Nav.Link href="/about" className={styles.navLink}>About</Nav.Link>
+            <Nav.Link href="/about" className={styles.navLink}>Rajasthan Tour</Nav.Link>
+            <Nav.Link href="/about" className={styles.navLink}>Kerala Tour</Nav.Link>
+            <Nav.Link href="/about" className={styles.navLink}>Manali Tour</Nav.Link>
+            <Nav.Link href="/packages" className={styles.navLink}>Explore Packages</Nav.Link>
+            <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
+            <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>
+            <Nav.Link href="/contact" className={styles.navLink}>Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
 
-          {/* Book Now Button for Larger Screens */}
-          <div className="d-none d-lg-block">
-            <Button className={styles.bookButton} onClick={handleShow}>Book Now</Button>
-          </div>
-        </Container>
-
-        {/* Booking Modal */}
-        <BookingModal showModal={showModal} handleClose={handleClose} />
+        {/* Book Now Button for Larger Screens */}
+        <div className="d-none d-lg-block">
+          <Button className={styles.bookButton} onClick={handleShow}>Book Now</Button>
+        </div>
       </Navbar>
+
+      {/* Booking Modal */}
+      <BookingModal showModal={showModal} handleClose={handleClose} />
     </>
   );
 };

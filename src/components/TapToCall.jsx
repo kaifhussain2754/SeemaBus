@@ -10,7 +10,7 @@ const TapToCall = () => {
         position: 'fixed',
         bottom: '90px', // Slightly above WhatsApp button if both are used
         right: '20px',
-        backgroundColor: '#007bff',
+        backgroundColor: '#B17457',
         color: 'white',
         borderRadius: '50%',
         width: '60px',
