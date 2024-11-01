@@ -2,10 +2,9 @@ import React from 'react';
 import CountUp from 'react-countup';
 import styles from './AboutPage.module.css'; // Import your CSS module
 import { statsAtom } from './StatsAtom';
-import { FaBus, FaShieldAlt, FaClock, FaUserFriends, FaStar } from 'react-icons/fa';
+import { FaBus, FaShieldAlt, FaClock, FaUserFriends } from 'react-icons/fa';
 import { useRecoilValue } from 'recoil';
-import Slider from 'react-slick';
-import testimonialsData from './testdata'; // Import your testimonial data
+import TestimonialSlider from './Testimonial';
 
 const AboutUs = () => {
     const stats = useRecoilValue(statsAtom); // Access the stats atom
@@ -18,17 +17,8 @@ const AboutUs = () => {
         alert("Enquiry form will open!"); // Placeholder for enquiry logic
     };
 
-    const sliderSettings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-    };
-
     return (
+    <div>
         <div className={`container my-5 ${styles.aboutContainer}`}>
             <div className={`row align-items-center`}>
                 <div className={`col-md-6 ${styles.description}`}>
@@ -148,25 +138,12 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Testimonials Section */}
-            <div className={`mt-5 ${styles.testimonialsContainer}`}>
-                <h2 className="text-center mb-4">What Our Customers Say</h2>
-                <Slider {...sliderSettings}>
-                    {testimonialsData.map((testimonial, index) => (
-                        <div key={index} className={styles.testimonialCard}>
-                            <p className={styles.testimonialText}>"{testimonial.text}"</p>
-                            <h5 className={styles.testimonialName}>- {testimonial.name}</h5>
-                            <div className={styles.rating}>
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <FaStar key={i} className={styles.starIcon} />
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </Slider>
-            </div>
         </div>
+        <div className="mt-5">
+                <TestimonialSlider />
+            </div>
+    </div> 
+
     );
 };
 

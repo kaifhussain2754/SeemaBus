@@ -18,11 +18,13 @@
 .callButton {
     background-color: #B17457; /* Button color */
     color: white;
+    margin-bottom: 10px;
 }
 
 .enquireButton {
     background-color: #B17457; /* Button color */
     color: white;
+    margin-bottom: 10px;
 }
 
 .row.mt-5 {
