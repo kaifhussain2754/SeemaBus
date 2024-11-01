@@ -11,6 +11,7 @@ import TourPackages from './components/TourPackage';
 import AboutUs from './components/About';
 import Footer from './components/Footer';
 import ContactUs from './components/ContactUs';
+import ImageGallery from './components/ImageGallery';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/allpackages" element={<TourPackages/>} />
+        <Route path="/gallery" element={<ImageGallery/>} />
         {/* Add other routes here */}
       </Routes>
       <TapToCall />

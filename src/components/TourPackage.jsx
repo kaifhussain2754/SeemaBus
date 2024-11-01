@@ -80,7 +80,7 @@ const TourPackages = () => {
                   className={`btn mt-3 ${styles.btn}`}
                   style={{ backgroundColor: '#B17457', borderColor: '#B17457' }}
                 >
-                  Book Now
+                  See More
                 </a>
               </div>
             </div>
