@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
@@ -14,15 +13,22 @@ import ContactUs from './components/ContactUs';
 import ImageGallery from './components/ImageGallery';
 import Loader from './components/Loader'; // Import the Loader component
 
+const appContainerStyle = {
+  maxWidth: '100%',
+  width: '100%',
+  overflowX: 'hidden',
+  padding: '0 15px', // Optional: Add some padding for better spacing
+  margin: '0 auto', // Center align the content
+  boxSizing: 'border-box', // Ensures padding and borders are included in width/height
+};
+
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate data fetching or any async operations
     const loadData = async () => {
-      // Simulate a loading period
       setTimeout(() => {
-        setLoading(false); // Set loading to false after data is fetched
+        setLoading(false);
       }, 1000);
     };
 
@@ -30,12 +36,12 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div style={appContainerStyle}>
       {loading ? (
-        <Loader /> // Show the loader while loading
+        <Loader />
       ) : (
         <>
-          <SeemaBusNavbar /> {/* Navbar will render only when not loading */}
+          <SeemaBusNavbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/book" element={<BookingForm />} />
@@ -45,11 +51,10 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/allpackages" element={<TourPackages />} />
             <Route path="/gallery" element={<ImageGallery />} />
-            {/* Add other routes here */}
           </Routes>
           <TapToCall />
           <WhatsAppChatButton />
-          <Footer /> {/* Footer will render only when not loading */}
+          <Footer />
         </>
       )}
     </div>
