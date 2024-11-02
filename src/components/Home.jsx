@@ -8,13 +8,22 @@ import Services from './Services';
 import TourPackages from './TourPackage';
 import AboutUs from './About';
 
+const homeContainerStyle = {
+  overflowX: 'hidden', // Prevent horizontal overflow
+  overflowY: 'auto',   // Allow vertical scroll if needed
+};
+
 const Home = () => {
   useEffect(() => {
     AOS.init(); // Initialize AOS
   }, []);
 
   return (
-    <div data-aos="fade-in" data-aos-duration="1000">
+    <div 
+      data-aos="fade-in" 
+      data-aos-duration="1000" 
+      style={homeContainerStyle} // Apply overflow styles here
+    >
       <HeroSection />
       <BookingForm />
       <Services />

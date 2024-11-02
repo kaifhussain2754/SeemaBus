@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppChatButton = () => {
+  
+  useEffect(() => {
+    // Set overflow-x hidden when component mounts
+    document.body.style.overflowX = 'hidden';
+
+    return () => {
+      // Clean up when component unmounts
+      document.body.style.overflowX = '';
+    };
+  }, []);
+
   return (
     <a
       href="https://api.whatsapp.com/send?phone=9166185546" // Replace with your number
