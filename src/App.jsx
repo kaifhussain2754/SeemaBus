@@ -12,6 +12,7 @@ import ImageGallery from './components/ImageGallery';
 import Loader from './components/Loader'; // Import the Loader component
 import WhatsAppChatButton from './components/WhatsappChat';
 import TapToCall from './components/TapToCall';
+import TourPackageDetails from './components/Pacakges';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/allpackages" element={<TourPackages />} />
             <Route path="/gallery" element={<ImageGallery />} />
+            <Route path="/package/:id" element={<TourPackageDetails />} />
           </Routes>
           
           <TapToCall />

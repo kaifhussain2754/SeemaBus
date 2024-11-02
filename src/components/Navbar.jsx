@@ -60,8 +60,8 @@ const SeemaBusNavbar = () => {
           <Nav className="mx-auto text-center"> {/* Centering the Nav links */}
             <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
             <Nav.Link href="/about" className={styles.navLink}>About</Nav.Link>
-            <Nav.Link href="/rajasthan-tour" className={styles.navLink}>Rajasthan Tour</Nav.Link>
-            <Nav.Link href="/manali-tour" className={styles.navLink}>Manali Tour</Nav.Link>
+            <Nav.Link href="/package/3" className={styles.navLink}>Rajasthan Tour</Nav.Link>
+            <Nav.Link href="/package/1" className={styles.navLink}>Manali Tour</Nav.Link>
             <Nav.Link href="/packages" className={styles.navLink}>Explore Packages</Nav.Link>
             <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
             <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>

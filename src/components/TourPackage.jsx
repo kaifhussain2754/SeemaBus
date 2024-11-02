@@ -1,56 +1,11 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import styles from './TourPackages.module.css'; // Import your CSS module
+import packageData from './packageData';  // Import your packageData
 
 const TourPackages = () => {
-  const packages = [
-    {
-      image: '/rajasthantour.jpg',
-      title: 'Rajasthan Tour Package',
-      description: 'Embark on a journey with Seema Tours & Travels. Explore the vibrant culture and royal heritage of Rajasthan.',
-    },
-    {
-      image: '/goldentriagle.jpeg',
-      title: 'Triple City Wonders Tour Package',
-      description: 'Discover the enchanting heritage and vibrant cultures of Delhi, Agra, and Jaipur with our Triple City Wonders Tour Package!',
-    },
-    {
-      image: '/manali.jpg',
-      title: 'Manali Tour Package',
-      description: 'Enjoy the breathtaking landscapes and adventure activities in the beautiful hill station of Manali.',
-    },
-    {
-      image: '/4 dham.png',
-      title: '4 Dham Tour Package',
-      description: 'Visit the sacred 4 Dhams of India and experience spirituality at its best.',
-    },
-    {
-      image: '/tajmahal.jpg',
-      title: 'Agra Tour Package',
-      description: 'Witness the iconic Taj Mahal and explore the rich history of Agra.',
-    },
-    {
-      image: '/kashmir.jpg',
-      title: 'Kashmir Tour Package',
-      description: 'Discover the mesmerizing beauty of Kashmir, often referred to as paradise on Earth.',
-    },
-    {
-      image: '/ladakh.jpg',
-      title: 'Ladakh Tour Package',
-      description: 'Experience the rugged beauty and adventure in the stunning landscapes of Ladakh.',
-    },
-    {
-      image: '/himachal.jpg',
-      title: 'Himachal Tour Package',
-      description: 'Explore the majestic mountains and serene valleys of Himachal Pradesh.',
-    },
-    {
-      image: '/kerela.jpg',
-      title: 'Kerala Tour Package',
-      description: 'Unwind in the backwaters and lush landscapes of Kerala, the land of coconut trees and spices.',
-    },
-  ];
+  const navigate = useNavigate();  // Hook for programmatic navigation
 
   React.useEffect(() => {
     AOS.init({
@@ -66,22 +21,35 @@ const TourPackages = () => {
         Embark on a journey with Seema Tours & Travels. Our carefully crafted tour packages, where adventure meets luxury and memories are made.
       </p>
       <div className="row">
-        {packages.map((tourPackage, index) => (
-          <div className="col-md-4 mb-4" key={index} data-aos="fade-up">
-            <div className={`card h-100 ${styles.card}`}>
-              <img src={tourPackage.image} className={`card-img-top ${styles.cardImgTop}`} alt={tourPackage.title} />
+        {packageData.map((tourPackage) => (
+          <div className="col-md-4 mb-4" key={tourPackage.id} data-aos="fade-up">
+            <div className="card h-100" style={{ border: 'none', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+              <img 
+                src={tourPackage.image} 
+                className="card-img-top" 
+                alt={tourPackage.title} 
+                style={{ borderRadius: '8px 8px 0 0', height: '300px', objectFit: 'cover' }} 
+              />
               <div className="card-body d-flex flex-column justify-content-between">
                 <div>
-                  <h5 className="card-title">{tourPackage.title}</h5>
-                  <p className="card-text">{tourPackage.description}</p>
+                  <h5 className="card-title" style={{ fontFamily: 'Josefin Sans' }}>{tourPackage.title}</h5>
+                  <p className="card-text">{tourPackage.description.substring(0, 100)}...</p> {/* Shortened description */}
                 </div>
-                <a
-                  href="#"
-                  className={`btn mt-3 ${styles.btn}`}
-                  style={{ backgroundColor: '#B17457', borderColor: '#B17457' }}
+                <Link
+                  to={`/package/${tourPackage.id}`}  // Dynamic link to package details
+                  className="btn mt-3"
+                  style={{
+                    backgroundColor: '#B17457',
+                    borderColor: '#B17457',
+                    color: '#fff',
+                    padding: '10px 20px',
+                    textDecoration: 'none',
+                    borderRadius: '5px',
+                    textAlign: 'center',
+                  }}
                 >
                   See More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
