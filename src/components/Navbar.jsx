@@ -61,7 +61,6 @@ const SeemaBusNavbar = () => {
             <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
             <Nav.Link href="/about" className={styles.navLink}>About</Nav.Link>
             <Nav.Link href="/rajasthan-tour" className={styles.navLink}>Rajasthan Tour</Nav.Link>
-            <Nav.Link href="/kerala-tour" className={styles.navLink}>Kerala Tour</Nav.Link>
             <Nav.Link href="/manali-tour" className={styles.navLink}>Manali Tour</Nav.Link>
             <Nav.Link href="/packages" className={styles.navLink}>Explore Packages</Nav.Link>
             <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>

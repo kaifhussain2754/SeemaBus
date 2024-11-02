@@ -8,7 +8,7 @@ const TourPackages = () => {
     {
       image: '/rajasthantour.jpg',
       title: 'Rajasthan Tour Package',
-      description: 'Embark on a journey with Pushpganga Tours & Travels. Explore the vibrant culture and royal heritage of Rajasthan.',
+      description: 'Embark on a journey with Seema Tours & Travels. Explore the vibrant culture and royal heritage of Rajasthan.',
     },
     {
       image: '/goldentriagle.jpeg',
@@ -63,7 +63,7 @@ const TourPackages = () => {
     <div className="container my-5" data-aos='fade-in'>
       <h1 className="text-center mb-4">Explore Our Tour Packages</h1>
       <p className="text-center mb-5">
-        Embark on a journey with Pushpganga Tours & Travels. Our carefully crafted tour packages, where adventure meets luxury and memories are made.
+        Embark on a journey with Seema Tours & Travels. Our carefully crafted tour packages, where adventure meets luxury and memories are made.
       </p>
       <div className="row">
         {packages.map((tourPackage, index) => (

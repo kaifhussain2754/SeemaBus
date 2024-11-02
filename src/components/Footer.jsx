@@ -132,8 +132,8 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div style={{ backgroundColor: '#4A4947', color: '#fff', padding: '15px 0', marginTop: '20px' }}>
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div style={{ backgroundColor: '#4A4947', color: '#fff', padding: '15px 0', marginTop: '20px', textAlign: 'center' }}>
+        <div className="container d-flex flex-column flex-md-row justify-content-center align-items-center">
           <p style={{ marginBottom: '10px', textAlign: 'center' }}>© 2024 Seema Bus Service. All rights reserved.</p>
           <div className="d-flex justify-content-center">
             {['facebook', 'instagram', 'youtube', 'linkedin', 'tripadvisor'].map((social) => (
