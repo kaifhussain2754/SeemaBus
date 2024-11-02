@@ -46,7 +46,7 @@ const TourPackageDetails = () => {
     formData.append("name", name);
     formData.append("phone", phone);
     formData.append("email", email);
-    formData.append("access_key", "02d6bfa2-a2e8-4f71-b08f-780980ef55b4");
+    formData.append("access_key", "1510a139-e0ac-4347-98f3-01424627ef7e");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -175,7 +175,7 @@ const TourPackageDetails = () => {
         {/* Right Side - Booking Form */}
         <Grid item xs={12} md={4}>
           <Paper elevation={6} sx={{ p: 4, boxShadow: 3, fontFamily: 'Josefin Sans', marginBottom: '10px' }}>
-            <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Josefin Sans' }}>Book Your Trip</Typography>
+            <Typography variant="h6" gutterBottom sx={{ fontFamily: 'Josefin Sans' }}>Book This Package</Typography>
             <form onSubmit={handleBooking}>
               {/* Select Package Field */}
               <FormControl fullWidth sx={{ mb: 3 }}>
