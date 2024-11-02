@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Button, Container, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { FaTimes } from 'react-icons/fa'; // Import the close icon
 import logo from '/logo.png'; // Adjust path as needed
 import BookingModal from './BookingModal'; // Import the BookingModal component
 import styles from './SeemaBusNavbar.module.css'; // CSS module for styling
 import TopBanner from './TopBanner'; // Ensure you import the TopBanner component
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const SeemaBusNavbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -15,18 +16,17 @@ const SeemaBusNavbar = () => {
   const handleClose = () => setShowModal(false); // Function to hide the modal
   const handleToggle = () => setExpanded(!expanded); // Function to toggle navbar expansion
 
-  // Inline styles for dropdown
-  const dropdownMenuStyle = {
-    transition: 'opacity 0.3s ease, transform 0.3s ease',
-    opacity: showDropdown ? 1 : 0,
-    transform: showDropdown ? 'translateY(0)' : 'translateY(-10px)',
-    display: showDropdown ? 'block' : 'none',
-  };
-
   return (
     <>
       <TopBanner />
-      <Navbar expand="lg" className={`${styles.navbar} sticky-top`} collapseOnSelect expanded={expanded}>
+      <Navbar
+        expand="lg"
+        className={`${styles.navbar} sticky-top`}
+        collapseOnSelect
+        expanded={expanded}
+        data-aos="fade-in" // Add AOS fade-in animation
+        data-aos-duration="1000" // Duration for the animation
+      >
         {/* Left: Logo and Brand Name */}
         <div className="d-flex align-items-center">
           <Navbar.Brand href="/" className={`${styles.brand} d-flex align-items-center`}>
@@ -57,12 +57,12 @@ const SeemaBusNavbar = () => {
 
         {/* Center: Nav Links */}
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-          <Nav className="mx-auto">
+          <Nav className="mx-auto text-center"> {/* Centering the Nav links */}
             <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
             <Nav.Link href="/about" className={styles.navLink}>About</Nav.Link>
-            <Nav.Link href="/about" className={styles.navLink}>Rajasthan Tour</Nav.Link>
-            <Nav.Link href="/about" className={styles.navLink}>Kerala Tour</Nav.Link>
-            <Nav.Link href="/about" className={styles.navLink}>Manali Tour</Nav.Link>
+            <Nav.Link href="/rajasthan-tour" className={styles.navLink}>Rajasthan Tour</Nav.Link>
+            <Nav.Link href="/kerala-tour" className={styles.navLink}>Kerala Tour</Nav.Link>
+            <Nav.Link href="/manali-tour" className={styles.navLink}>Manali Tour</Nav.Link>
             <Nav.Link href="/packages" className={styles.navLink}>Explore Packages</Nav.Link>
             <Nav.Link href="/services" className={styles.navLink}>Services</Nav.Link>
             <Nav.Link href="/gallery" className={styles.navLink}>Image Gallery</Nav.Link>
