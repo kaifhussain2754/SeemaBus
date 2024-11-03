@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import SuccessModal from './SuccessModal'; // Import the SuccessModal
+import TermsAndConditionsModal from './TermsConditions'; // Import the TermsAndConditionsModal
 import styles from './BookingModal.module.css'; // Assuming you have a CSS module for custom styles
 
 const BookingModal = ({ showModal, handleClose }) => {
@@ -15,6 +16,7 @@ const BookingModal = ({ showModal, handleClose }) => {
   });
   const [successMessage, setSuccessMessage] = useState('');
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false); // State to control Terms & Conditions modal
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +41,7 @@ const BookingModal = ({ showModal, handleClose }) => {
       const data = await response.json();
 
       if (data.success) {
-        setSuccessMessage("Your response has bees submitted successfully! our representative will connect with you shortly.");
+        setSuccessMessage("Your response has been submitted successfully! Our representative will connect with you shortly.");
         setShowSuccessModal(true); // Show success modal
         handleClose(); // Close the booking modal
       } else {
@@ -143,6 +145,14 @@ const BookingModal = ({ showModal, handleClose }) => {
                 onChange={handleChange}
               />
             </Form.Group>
+
+            {/* Terms and Conditions Link */}
+            <div className="d-flex justify-content-center">
+              <Button variant="link" onClick={() => setShowTermsModal(true)}>
+                View Terms & Conditions
+              </Button>
+            </div>
+
             <div className="d-flex justify-content-center">
               <Button
                 variant="primary"
@@ -162,9 +172,14 @@ const BookingModal = ({ showModal, handleClose }) => {
           successMessage={successMessage}
           onClose={() => {
             setShowSuccessModal(false);
-            setSuccessMessage('Your Response has been submitted, Our Representrative will connect with you shortly');
+            setSuccessMessage('');
           }}
         />
+      )}
+
+      {/* Terms & Conditions Modal */}
+      {showTermsModal && (
+        <TermsAndConditionsModal onClose={() => setShowTermsModal(false)} />
       )}
     </>
   );

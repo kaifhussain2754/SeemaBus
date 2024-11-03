@@ -13,7 +13,7 @@ import Loader from './components/Loader'; // Import the Loader component
 import WhatsAppChatButton from './components/WhatsappChat';
 import TapToCall from './components/TapToCall';
 import TourPackageDetails from './components/Pacakges';
-
+import PrivacyPolicy from './components/PrivacyPolicy'; // Import the Privacy Policy component
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -41,6 +41,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/packages" element={<TourPackages />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> 
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/allpackages" element={<TourPackages />} />
             <Route path="/gallery" element={<ImageGallery />} />

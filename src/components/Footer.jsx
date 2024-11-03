@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PrivacyPolicyModal from './PrivacyPolicy';
 
 const Footer = () => {
+  const [isPrivacyModalOpen, setPrivacyModalOpen] = useState(false);
+
+  const handleOpenPrivacyModal = () => setPrivacyModalOpen(true);
+  const handleClosePrivacyModal = () => setPrivacyModalOpen(false);
+
   return (
     <footer style={{ backgroundColor: '#D8D2C2', color: '#4A4947', padding: '40px 0' }}>
       {/* Top Banner */}
@@ -8,7 +14,7 @@ const Footer = () => {
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column', // Stacks vertically on smaller screens
+            flexDirection: 'column',
             alignItems: 'center',
             border: '1px solid #B17457',
             borderRadius: '5px',
@@ -90,6 +96,11 @@ const Footer = () => {
                   <a href={link.path} style={{ color: '#4A4947', textDecoration: 'none' }}>{link.name}</a>
                 </li>
               ))}
+              <li>
+                <button onClick={handleOpenPrivacyModal} style={{ background: 'none', border: 'none', color: '#4A4947', cursor: 'pointer', textDecoration: 'underline' }}>
+                  Privacy Policy
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -149,6 +160,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal open={isPrivacyModalOpen} handleClose={handleClosePrivacyModal} />
     </footer>
   );
 };

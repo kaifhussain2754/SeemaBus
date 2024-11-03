@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Grid } from '@mui/material';
+import { Container, TextField, Button, Grid, Link } from '@mui/material';
 import SuccessModal from './SuccessModal'; // Import the SuccessModal
+import TermsAndConditionsModal from './TermsConditions'; // Import the TermsAndConditionsModal
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,8 @@ const BookingForm = () => {
     passengers: '',
   });
   const [result, setResult] = useState(""); // State to manage submission result
-  const [modalOpen, setModalOpen] = useState(false); // State to control modal visibility
+  const [modalOpen, setModalOpen] = useState(false); // State to control success modal visibility
+  const [modalOpenTerms, setModalOpenTerms] = useState(false); // State to control terms modal visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +49,7 @@ const BookingForm = () => {
 
       if (data.success) {
         setResult("Form Submitted Successfully");
-        setModalOpen(true); // Open the modal on success
+        setModalOpen(true); // Open the success modal on success
         setFormData({ // Reset form fields
           name: '',
           phone: '',
@@ -69,7 +71,11 @@ const BookingForm = () => {
   };
 
   const handleCloseModal = () => {
-    setModalOpen(false); // Close the modal
+    setModalOpen(false); // Close the success modal
+  };
+
+  const handleCloseTerms = () => {
+    setModalOpenTerms(false); // Close the terms modal
   };
 
   return (
@@ -190,11 +196,22 @@ const BookingForm = () => {
         >
           Submit
         </Button>
+        <Link
+          component="button"
+          variant="body2"
+          onClick={() => setModalOpenTerms(true)} // Directly open the modal on click
+          sx={{ mt: 2, textAlign: 'center', color: '#4A4947' }}
+        >
+          Terms & Conditions
+        </Link>
       </form>
       <span>{result}</span>
       
       {/* Render SuccessModal conditionally */}
       {modalOpen && <SuccessModal onClose={handleCloseModal} />}
+      
+      {/* Render TermsAndConditionsModal conditionally */}
+      {modalOpenTerms && <TermsAndConditionsModal onClose={handleCloseTerms} />}
     </Container>
   );
 };
