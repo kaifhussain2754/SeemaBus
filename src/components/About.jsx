@@ -89,33 +89,28 @@ const AboutUs = () => {
 
                 {/* Statistics Section */}
                 <div className={`${styles.statsContainer} mt-5`}>
-                    <div className="row">
-                        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
-                            <h2>
-                                <CountUp start={0} end={stats.yearsOfService} duration={2.75} />+
-                            </h2>
-                            <p>Years of Service</p>
-                        </div>
-                        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
-                            <h2>
-                                <CountUp start={0} end={stats.successfulTrips} duration={2.75} />+
-                            </h2>
-                            <p>Successful Trips</p>
-                        </div>
-                        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
-                            <h2>
-                                <CountUp start={0} end={stats.numberOfVehicles} duration={2.75} />+
-                            </h2>
-                            <p>Number of Vehicles</p>
-                        </div>
-                        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="1000">
-                            <h2>
-                                <CountUp start={0} end={stats.happyCustomers} duration={2.75} />+
-                            </h2>
-                            <p>Happy Customers</p>
-                        </div>
-                    </div>
-                </div>
+    <div className="row justify-content-center">
+        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="1000">
+            <h2>
+                <CountUp start={0} end={stats.yearsOfService} duration={2.75} />+
+            </h2>
+            <p>Years of Service</p>
+        </div>
+        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="1000">
+            <h2>
+                <CountUp start={0} end={stats.successfulTrips} duration={2.75} />+
+            </h2>
+            <p>Successful Trips</p>
+        </div>
+        <div className="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1000">
+            <h2>
+                <CountUp start={0} end={stats.happyCustomers} duration={2.75} />+
+            </h2>
+            <p>Happy Customers</p>
+        </div>
+    </div>
+</div>
+
 
                 {/* Why Choose Us Section */}
                 <div className={`mt-5 ${styles.whyChooseContainer}`}>

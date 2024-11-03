@@ -6,7 +6,6 @@ export const statsAtom = atom({
   default: {
     yearsOfService: 25,
     successfulTrips: 28000,
-    numberOfVehicles: 200,
     happyCustomers: 50000,
   }, // Default value (aka initial value)
 });
