@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PrivacyPolicyModal from './PrivacyPolicy';
 import TermsAndConditionsModal from './TermsConditions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   const [isPrivacyModalOpen, setPrivacyModalOpen] = useState(false); // State for Privacy Policy Modal
@@ -38,7 +40,6 @@ const Footer = () => {
                 { name: 'About Us', path: '/about' },
                 { name: 'Services', path: '/services' },
                 { name: 'Gallery', path: '/gallery' },
-                { name: 'Blog', path: '/blog' },
                 { name: 'Contact', path: '/contact' },
               ].map((link) => (
                 <li key={link.name}>
@@ -56,6 +57,17 @@ const Footer = () => {
               <a href="tel:+919414051561" style={{ color: '#4A4947', textDecoration: 'none' }}>+91 916 618 5545</a><br />
               <a href="mailto:info@seemabusservice.in" style={{ color: '#4A4947', textDecoration: 'none' }}>seemabusservices@gmail.com</a>
             </address>
+            <div style={{ display: 'flex', gap: '15px', marginTop: '10px' }}>
+              <a href="https://www.instagram.com/seemabusservices" target="_blank" rel="noopener noreferrer" style={{ color: '#4A4947' }}>
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
+              </a>
+              <a href="https://wa.me/+919166185546" target="_blank" rel="noopener noreferrer" style={{ color: '#4A4947' }}>
+                <FontAwesomeIcon icon={faWhatsapp} size="lg" />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100068316505543&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" style={{ color: '#4A4947' }}>
+                <FontAwesomeIcon icon={faFacebook} size="lg" />
+              </a>
+            </div>
           </div>
 
           {/* Policies */}
@@ -82,11 +94,10 @@ const Footer = () => {
       </div>
 
       {/* Privacy Policy Modal */}
-      {/* Privacy Policy Modal */}
-<PrivacyPolicyModal 
-  open={isPrivacyModalOpen} 
-  handleClose={handleClosePrivacyModal} 
-/>
+      <PrivacyPolicyModal 
+        open={isPrivacyModalOpen} 
+        handleClose={handleClosePrivacyModal} 
+      />
 
       {/* Terms and Conditions Modal */}
       {isTermsModalOpen && <TermsAndConditionsModal onClose={handleCloseTermsModal} />}

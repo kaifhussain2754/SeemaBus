@@ -53,7 +53,7 @@ const TopBanner = () => {
               onMouseLeave={(e) => (e.currentTarget.style.color = '#FAF7F0')}
             />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=100068316505543&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
             <FaFacebook
               style={{
                 color: '#FAF7F0',
